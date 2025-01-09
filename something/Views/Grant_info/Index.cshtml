@@ -1,0 +1,53 @@
+﻿@model IEnumerable<something.Models.Grant_info>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.grant_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.banch_grant_value)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.master_grant_value)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.aspirant_grant_value)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.grant_name)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.banch_grant_value)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.master_grant_value)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.aspirant_grant_value)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.grant_name">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.grant_name">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.grant_name">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

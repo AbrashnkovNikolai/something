@@ -1,0 +1,36 @@
+﻿@model something.Models.Grant_info
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Grant_info</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.banch_grant_value)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.banch_grant_value)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.master_grant_value)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.master_grant_value)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.aspirant_grant_value)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.aspirant_grant_value)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.grant_name">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
